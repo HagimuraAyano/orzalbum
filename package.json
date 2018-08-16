@@ -1,0 +1,60 @@
+{
+    "name": "orzalbum",
+    "displayName": "orzalbum",
+    "description": "easy view images in folder",
+    "version": "1.0.0",
+    "publisher": "ayano",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.loadAlbum",
+        "onCommand:extension.nextImage",
+        "onCommand:extension.prevImage"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.loadAlbum",
+                "title": "orzalbum:load"
+            },
+            {
+                "command": "extension.nextImage",
+                "title": "orzalbum:next"
+            },
+            {
+                "command": "extension.prevImage",
+                "title": "orzalbum:prev"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.loadAlbum",
+                "key": "alt+o"
+            },
+            {
+                "command": "extension.nextImage",
+                "key": "alt+n"
+            },
+            {
+                "command": "extension.prevImage",
+                "key": "alt+p"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
